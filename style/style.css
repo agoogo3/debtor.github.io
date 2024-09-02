@@ -1,0 +1,218 @@
+body {
+  background-color: red;
+}
+.intro {
+  float: right;
+  padding: 1rem;
+  color: white;
+}
+.main_wrapper {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  background-color: rgb(238, 231, 231);
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+.first_overview {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 0.5rem;
+  height: 11rem;
+  width: 90%;
+  box-shadow: 0px 0px 4px rgb(188, 184, 184);
+}
+.first_overview * {
+  padding-left: 1rem;
+  position: relative;
+}
+.debtor {
+  padding-top: 0.5rem;
+}
+.gh_left {
+  bottom: 1rem;
+  font-size: 1.3rem;
+}
+.debtor_pro {
+  bottom: 2.2rem;
+  width: 85%;
+  /* margin-left: 0.1rem; */
+}
+.of {
+  bottom: 2rem;
+  font-size: 12px;
+  font-weight: 300;
+}
+.second_overview {
+  display: flex;
+  flex-direction: row;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  width: 90%;
+  gap: 10px;
+}
+.current_balancing {
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 4px rgb(188, 184, 184);
+  width: 50%;
+}
+.quick_settings {
+  list-style-type: none;
+}
+.quick_settings li {
+  position: relative;
+  right: 1rem;
+  cursor: pointer;
+}
+a {
+  color: rgb(50, 49, 49);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.bottom_nav {
+  position: fixed;
+  height: 5rem;
+  /* width: 100%; */
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 4px rgb(188, 184, 184);
+  border-radius: 1rem 1rem 0rem 0rem;
+
+  top: 100%;
+
+  left: 50%;
+  /* transform: translateX(-50%); */
+  transform: translateY(-100%) translateX(-50%);
+}
+
+.bottom_list {
+  width: 80%;
+  /* background-color: blue; */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.bottom_list li {
+  font-size: 0.8rem;
+  right: 7%;
+  position: relative;
+  /* background-color: yellow; */
+}
+
+.record {
+  background-color: red;
+  border-radius: 100%;
+  position: relative;
+  bottom: 2.5rem;
+  width: 7rem;
+
+  height: 4rem;
+  box-shadow: 0px 0px 5px rgb(70, 70, 70);
+
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.debtor_list {
+  background-color: whitesmoke;
+  overflow-y: auto;
+  height: 70%;
+  z-index: 999;
+  display: flex;
+  width: 20rem;
+  flex-direction: column;
+  position: fixed;
+  box-shadow: 0px 0px 1px rgb(188, 184, 184);
+  border-radius: 1rem 1rem 0rem 0rem;
+  gap: 1rem;
+  /* box-shadow: 0px 0px 5px rgb(70, 70, 70); */
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  transition: 0.2s transform;
+}
+
+.debtor_list li,
+.add_debt_wrapper li {
+  list-style: none;
+  width: 80%;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  box-shadow: 0px 0px 3px rgb(147, 145, 145);
+  cursor: pointer;
+}
+.add_debt_wrapper {
+  background-color: whitesmoke;
+  overflow-y: auto;
+  height: 80%;
+  z-index: 10;
+  display: flex;
+  width: 20rem;
+  flex-direction: column;
+  position: fixed;
+  box-shadow: 0px 0px 1px rgb(188, 184, 184);
+  border-radius: 1rem 1rem 0rem 0rem;
+  gap: 1rem;
+  /* box-shadow: 0px 0px 5px rgb(70, 70, 70); */
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  transition: 0.2s transform;
+}
+
+.view_balancing {
+  background-color: whitesmoke;
+  overflow-y: auto;
+  height: 70%;
+  z-index: 999;
+  width: 20rem;
+  position: fixed;
+  box-shadow: 0px 0px 1px rgb(188, 184, 184);
+  border-radius: 1rem 1rem 0rem 0rem;
+  gap: 1rem;
+  /* box-shadow: 0px 0px 5px rgb(70, 70, 70); */
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  transition: 0.2s transform;
+}
+.balancing_preview {
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 1px 0px 9px rgb(70, 70, 70);
+  border: 2px solid rgb(231, 41, 41);
+  background-color: red;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.amount_wrapper {
+  position: absolute;
+  height: fit-content;
+  top: 40%;
+  transform: translateY(-100%);
+  border-radius: 20px 0px 20px 20px;
+  display: flex;
+  background-color: white;
+  display: flex;
+  width: 100%;
+
+  flex-direction: column;
+}

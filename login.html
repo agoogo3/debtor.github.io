@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style/login.css" />
+  </head>
+  <body>
+    <div
+      class="login_wrapper"
+      style="
+      position: relative;
+      width: 97%;
+      height: 100dvh;
+        font-family: Arial, Helvetica, sans-serif;
+      "
+    >
+      <form style="position: relative; top: 100%; transform: translateY(-120%); display: block;">
+        <label class="label" for="name">Enter your name</label
+        ><br />
+
+        <input
+          type="text"
+          id="name"
+          style="
+            padding: 0.7rem;
+            border: 2px solid rgb(180, 171, 171);
+            border-radius: 5px;
+            width: 90%;
+          "
+        /><br /><br />
+
+        <label class="label" for="phoneNumber">Enter your phone number</label
+        ><br />
+        <!-- <div
+          style="
+            border: 2px solid rgb(180, 171, 171);
+            width: 20%;
+            padding: 0.7rem;
+            border-radius: 5px;
+            display: inline;
+          "
+        >
+          +233
+        </div> -->
+        <input
+          type="tel"
+          id="phoneNumber;"
+          style="
+            padding: 0.7rem;
+            border: 2px solid rgb(180, 171, 171);
+            border-radius: 5px;
+            width: 90%;
+            position: relative;
+          "
+        />
+        <br>
+        <input
+          type="submit"
+          value="VERIFY YOUR PHONE NUMBER"
+          style="
+            margin-top: 2rem;
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 0.7rem;
+            border-radius: 5px;
+            width: 97%;
+            font-weight: 600;
+            cursor: pointer;
+          "
+        />
+      </form>
+
+      <form style="position: relative; top: 100%; transform: translateY(-120%); display: none">
+        <span class="label" style="position: absolute; left: 50%; transform: translateX(-50%);text-align: center; bottom: 9rem;">Please enter the OTP sent to +2334567946 </span><br>
+        <label for="otp" class="label">OTP</label>
+        <input type="tel" name="otp" id="otp" required style="
+            padding: 0.7rem;
+            border: none;
+            background-color: rgba(231, 198, 198, 0.89);
+            border-radius: 5px;
+            width: 90%;
+          ">
+          <span class="label" style="border-bottom: 2px solid black; position: relative;top: .5rem;"> Send Again</span>
+          <span class="label" style="float: right; position: relative; top: .5rem; right: .8rem;">05:00</span>
+        <input type="submit"value="CONFIRM"
+          style="
+            margin-top: 2rem;
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 0.7rem;
+            border-radius: 5px;
+            width: 97%;
+            font-weight: 600;
+            cursor: pointer;
+          ">
+      </form>
+    </div>
+  </body>
+</html>

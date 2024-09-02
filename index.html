@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/debtor.css" />
+  </head>
+  <body>
+    <p class="intro">Yo, user</p>
+    <br /><br /><br /><br /><br />
+    <div class="main_wrapper">
+      <div
+        class="first_overview"
+        style="cursor: pointer"
+        onclick="window.location = 'debtor.html'"
+      >
+        <b class="debtor">Debtor</b>
+        <p class="debt_name">Debtor name</p>
+        <p class="gh_left">GHC left</p>
+        <progress class="debtor_pro" value="32" max="100"></progress>
+        <span class="of">Of GHC</span>
+      </div>
+      <div class="second_overview">
+        <div class="current_balancing">
+          <b
+            style="
+              font-size: 0.9rem;
+              position: relative;
+              top: 0.6rem;
+              left: 1rem;
+              cursor: pointer;
+            "
+            >Total Debts</b
+          >
+          <p style="position: relative; left: 1rem; font-weight: 250">date</p>
+          <p>
+            <b
+              style="
+                font-weight: 400;
+                font-size: 1.5rem;
+                position: relative;
+                left: 1rem;
+              "
+              >GHC 0.00</b
+            >
+          </p>
+          <span
+            style="
+              position: relative;
+              left: 1rem;
+              bottom: 18px;
+              font-size: 12px;
+              font-weight: 300;
+              cursor: pointer;
+            "
+            >Last added debt 13 june</span
+          >
+        </div>
+
+        <div class="current_balancing">
+          <b
+            style="
+              font-size: 0.9rem;
+              position: relative;
+              top: 0.6rem;
+              left: 1rem;
+            "
+            >Total Paid Debts</b
+          >
+          <p style="position: relative; left: 1rem; font-weight: 250">date</p>
+          <p>
+            <b
+              style="
+                font-weight: 400;
+                font-size: 1.5rem;
+                position: relative;
+                left: 1rem;
+              "
+              >GHC 0.00</b
+            >
+          </p>
+          <span
+            style="
+              position: relative;
+              left: 1rem;
+              bottom: 18px;
+              font-size: 12px;
+              font-weight: 300;
+            "
+            >Last paid debt: 13 june</span
+          >
+        </div>
+      </div>
+      <br /><br /><br /><br /><br />
+      <h3 style="padding-left: 1rem">Quick Access</h3>
+      <ul class="quick_settings">
+        <li id="add_debt"><a>Add Debts</a></li>
+        <hr
+          style="
+            position: relative;
+            right: 1rem;
+            color: rgb(235, 219, 219);
+            margin-top: 1.5rem;
+            opacity: 0.4;
+          "
+        />
+        <li id="debtors">Add Debtor</li>
+        <hr
+          style="
+            position: relative;
+            right: 1rem;
+            color: rgb(235, 219, 219);
+            margin-top: 1.5rem;
+            opacity: 0.4;
+          "
+        />
+
+        <li><a href="#">Help & Support</a></li>
+        <hr
+          style="
+            position: relative;
+            right: 1rem;
+            color: rgb(235, 219, 219);
+            margin-top: 1.5rem;
+            opacity: 0.4;
+          "
+        />
+      </ul>
+      <br /><br /><br />
+
+      <div class="bottom_nav">
+        <ul class="bottom_list">
+          <li class="li"><a href="balancing.html">Balancing</a></li>
+          <li class="li"><a href="debtors.html">Debtors</a></li>
+          <li
+            class="record"
+            style="font-size: 40px; align-items: center"
+            onclick="balance()"
+          >
+            +
+          </li>
+          <li class="li"><a href="#">Reports</a></li>
+          <li class="li"><a href="#">Settings</a></li>
+        </ul>
+      </div>
+      <div class="payment" id="pop" style="transform-origin: bottom">
+        <form id="pop_form">
+          <div
+            class="sub_payment"
+            style="height: fit-content; display: flex; flex-direction: column"
+          >
+            <span class="close" style="margin-left: auto" onclick="popup()"
+              >&Cross;</span
+            >
+            <br />
+            <span style="padding: 0.5rem; font-weight: 250; font-size: 1.1rem"
+              >Add Debt</span
+            >
+            <span
+              style="
+                font-size: 0.7rem;
+                white-space: nowrap;
+                padding-left: 0.5rem;
+                font-weight: 200;
+              "
+              >Please input your results in the input fields below</span
+            ><br />
+
+            <div style="display: flex; padding-top: 0.5rem">
+              <input
+                type="checkbox"
+                name="check_phys"
+                id="check_phys"
+                style="width: 1rem; cursor: pointer"
+              />
+              <label
+                for="check_phys"
+                style="
+                  font-size: 0.7rem;
+                  position: relative;
+                  top: 0.2rem;
+                  font-weight: 250;
+                  cursor: pointer;
+                "
+                >Check this if your <b>physical</b> is seperated (transfer &
+                momo)</label
+              >
+            </div>
+
+            <div style="display: flex; padding-top: 0.5rem">
+              <input
+                type="checkbox"
+                name="check_tel"
+                id="check_tel"
+                style="width: 1rem; cursor: pointer"
+              />
+              <label
+                for="check_tel"
+                style="
+                  font-size: 0.7rem;
+                  position: relative;
+                  top: 0.2rem;
+                  font-weight: 250;
+                  cursor: pointer;
+                "
+                >Check this if you offer <b>telecel cash & telecel trans</b>
+              </label>
+            </div>
+
+            <br />
+            <label for="physical" style="font-size: 0.8rem; padding: 0.5rem"
+              >Physical</label
+            ><br />
+            <input
+              type="number"
+              name="physcial"
+              id="physical"
+              required
+              placeholder="Enter physical cash"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <label for="m_electronic" style="font-size: 0.8rem; padding: 0.5rem"
+              >MTN E.Cash</label
+            ><br />
+            <input
+              type="number"
+              name="m_electronic"
+              id="mElectronic"
+              required
+              placeholder="Enter MTN E.Cash"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <label for="t_electronic" style="font-size: 0.8rem; padding: 0.5rem"
+              >AirtelTigoE.Cash</label
+            ><br />
+            <input
+              type="number"
+              name="t_electronic"
+              id="tElectronic"
+              required
+              placeholder="Enter AirtelTigo E.Cash"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+
+            <label
+              for="tel_electronic"
+              style="font-size: 0.8rem; padding: 0.5rem"
+              class="telecel"
+              >Telecel E.Cash</label
+            ><br />
+            <input
+              type="number"
+              name="t_electronic"
+              id="telElectronic"
+              class="telecel"
+              placeholder="Enter Telecel E.Cash"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+
+            <label for="m_transfer" style="font-size: 0.8rem; padding: 0.5rem"
+              >MTN Transfer (Amount on phone)</label
+            ><br />
+            <input
+              type="number"
+              name="m_transfer"
+              id="amount"
+              required
+              placeholder="Enter MTN transfer"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <label
+              for="m_transfer_p"
+              class="m_transfer_p"
+              style="font-size: 0.8rem; padding: 0.5rem"
+              >MTN Transfer (Physical)</label
+            ><br />
+            <input
+              type="number"
+              name="m_transfer_p"
+              id="m_transfer_p"
+              class="m_transfer_p"
+              placeholder="Enter MTN transfer (Physical)"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <label for="m_transfer" style="font-size: 0.8rem; padding: 0.5rem"
+              >AirtelTigo Transfer (Amount on phone)</label
+            ><br />
+            <input
+              type="number"
+              name="t_transfer"
+              id="amount"
+              required
+              placeholder="Enter AirtelTigo transfer"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <label
+              for="tel_transfer"
+              class="telecel"
+              style="font-size: 0.8rem; padding: 0.5rem"
+              >Telecel Transfer (Amount on phone)</label
+            ><br />
+            <input
+              type="number"
+              name="tel_transfer"
+              class="telecel"
+              id="amount"
+              placeholder="Enter Telecel transfer"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <br />
+
+            <button
+              type="submit"
+              style="
+                position: relative;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                border: none;
+                background-color: red;
+                color: white;
+                border-radius: 0.4rem;
+                height: 2rem;
+                cursor: pointer;
+              "
+            >
+              Confirm Balancing
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="debtor_list" id="debtor_list">
+        <span
+          class="close"
+          style="margin-left: auto; margin-bottom: -2rem"
+          onclick="closeDebtorList()"
+          >&Cross;</span
+        >
+        <h4 style="padding-left: 1rem">Debtors</h4>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum dolor.</li>
+
+        <span
+          style="margin: auto; color: red; margin-bottom: 1rem; cursor: pointer"
+          onclick="location.href = 'debtors.html'"
+          >View More</span
+        >
+      </div>
+
+      <div
+        id="add_debtor_main"
+        style="
+          width: 100%;
+          height: 100%;
+          background-color: rgb(20, 19, 19);
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%) scale(0);
+          z-index: 9;
+          opacity: .4;
+        "
+      >
+        
+      </div>
+      <div class="payment" id="debtAdding">
+          <form>
+            <div class="sub_payment payment" id="payment">
+              <span class="close" onclick="debtAddingdown()">&Cross;</span> <br />
+              <span
+                style="
+                  padding: 0.5rem;
+                  font-weight: 250;
+                  font-size: 1.1rem;
+                  transform-origin: bottom;
+                "
+                >Tap to select an amount</span
+              ><br />
+              <div class="amount_wrapper">
+                <div class="amount">10</div>
+                <div class="amount">20</div>
+                <div class="amount">50</div>
+                <div class="amount">70</div>
+                <div class="amount">100</div>
+              </div> <br><br><br><br>
+              <input
+                type="number"
+                name="p_amount"
+                id="amountTF"
+                required
+                placeholder="Or enter amount"
+                style="
+                  padding: 0.5rem;
+                  position: relative;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 90%;
+                  border-radius: 0.4rem;
+                  border: 1px solid black;
+                "
+              /><br />
+              <input
+                type="text"
+                name="reason"
+                id="reason"
+                required
+                placeholder="Reason for debt"
+                style="
+                  padding: 0.5rem;
+                  margin-top: 0.5rem;
+                  position: relative;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 90%;
+                  border-radius: 0.4rem;
+                  border: 1px solid black;
+                "
+              /><br />
+              <br />
+              <button
+                id="payment_button"
+                type="submit"
+                style="
+                  position: relative;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 95%;
+                  border: none;
+                  background-color: red;
+                  color: white;
+                  border-radius: 0.4rem;
+                  height: 2rem;
+                  bottom: .3rem;
+                  cursor: pointer;
+                "
+              >
+                Make Payment
+              </button>
+            </div>
+          </form>
+        </div>
+      <div
+          class="add_debt_wrapper"
+          id="add_debt_wrapper"
+          style="overflow-x: hidden"
+        >
+          <span
+            class="close"
+            style="margin-left: auto; margin-bottom: -2rem"
+            onclick="closeAddDebtor()"
+            >&Cross;</span
+          >
+          <input
+            type="search"
+            placeholder="Search for debtor"
+            style="
+              border-radius: 10px;
+              border: 1px solid whitesmoke;
+              width: 90%;
+              padding: 9px;
+              margin-top: 5px;
+              background-color: white;
+              position: relative;
+              left: 50%;
+              transform: translateX(-50%);
+            "
+          />
+          <li class="debtors_names">Lorem ipsum dolor sit.</li>
+          <li class="debtors_names">Lorem ipsum dolor sit.</li>
+          <li class="debtors_names">Lorem ipsum dolor sit.</li>
+          <li class="debtors_names">Lorem ipsum dolor sit.</li>
+
+          <span
+            style="
+              margin: auto;
+              color: red;
+              margin-bottom: 1rem;
+              cursor: pointer;
+            "
+            onclick="location.href =  'debtors.html'"
+            >View More</span
+          >
+        </div>
+      <div class="payment" id="popDebtor">
+        <form>
+          <div class="sub_payment payment">
+            <span class="close" onclick="popdown()">&Cross;</span> <br />
+            <span
+              style="
+                padding: 0.5rem;
+                font-weight: 250;
+                font-size: 1.1rem;
+                transform-origin: bottom;
+              "
+              >Input Debtor's credentials</span
+            ><br />
+            <!-- <div class="amount_wrapper">
+              <div class="amount">10</div>
+              <div class="amount">20</div>
+              <div class="amount">50</div>
+              <div class="amount">70</div>
+              <div class="amount">100</div>
+            </div>-->
+            <br />
+            <label for="name" style="padding-left: 0.5rem; font-weight: 300"
+              >Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Debtor's name"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <label for="contact" style="padding-left: 0.5rem; font-weight: 300"
+              >Contact
+            </label>
+            <input
+              type="number"
+              name="contact"
+              id="contact"
+              required
+              placeholder="Debtor's contact"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <br />
+            <button
+              type="submit"
+              style="
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                border: none;
+                background-color: red;
+                color: white;
+                border-radius: 0.4rem;
+                height: 2rem;
+                cursor: pointer;
+              "
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>

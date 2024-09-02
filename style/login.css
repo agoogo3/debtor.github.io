@@ -1,0 +1,8 @@
+.label{
+    font-size: .8rem;
+    opacity: .6;
+    font-weight: 700;
+}
+form{
+    user-select: none;
+}

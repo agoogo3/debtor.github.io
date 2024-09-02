@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debtors</title>
+    <link rel="stylesheet" href="style/debtor.css" />
+    <!-- <link rel="stylesheet" href="style/style.css" /> -->
+  </head>
+  <body style="background-color: red">
+    <b onclick="history.back()" style="color: white; text-decoration: none; font-size: 1.9rem; cursor: pointer;">&larr;</b>
+    <br /><br />
+    <span style="color: white">Debtors</span>
+    <input type="search" placeholder="search for debtor" style="float: right; color: red;
+    border-radius: 7px; padding: 8px; border: none;">
+    <br /><br />
+    <b style="color: white; font-size: 1.2rem">GHC 0.00</b><br />
+    <button onclick="popup()" style="background-color: white;
+     border-radius: 4px;
+     position: relative; left: 50%;
+      transform: translateX(-50%);
+      border: none;
+      width: 95%;
+      height: 2.5rem;
+      font-size: .9rem;
+      font-weight: 400;
+      margin-top: 1rem;
+      color: red;
+      cursor: pointer;
+      margin-bottom: 1rem;" >
+      Add Debtor
+    </button>
+    <br />
+
+    <div class="main_wrapper" style="padding: 0.5rem">
+      <div class="active_debt" id="active_debt">
+        <div
+          class="first_overview"
+          style="cursor: pointer"
+          onclick="window.location = 'debtor.html'"
+        >
+          <b class="debtor">Debtor name</b>
+          <p class="debt_name">Debtor contact</p>
+          <p class="gh_left">GHC left</p>
+          <progress class="debtor_pro pro" value="32" max="100"></progress>
+          <span class="of">Of GHC</span>
+        </div>
+        <div
+          class="first_overview"
+          style="cursor: pointer"
+          onclick="window.location = 'debtor.html'"
+        >
+          <b class="debtor">Debtor name</b>
+          <p class="debt_name">Debtor contact</p>
+          <p class="gh_left">GHC left</p>
+          <progress class="debtor_pro pro" value="32" max="100"></progress>
+          <span class="of">Of GHC</span>
+        </div>
+      </div>
+       <div class="payment" id="pop">
+        <form>
+          <div class="sub_payment payment">
+            <span class="close" onclick="popdown()">&Cross;</span> <br />
+            <span style="padding: 0.5rem; font-weight: 250; font-size: 1.1rem; transform-origin: bottom;"
+              >Input Debtor's credentials</span
+            ><br />
+            <!-- <div class="amount_wrapper">
+              <div class="amount">10</div>
+              <div class="amount">20</div>
+              <div class="amount">50</div>
+              <div class="amount">70</div>
+              <div class="amount">100</div>
+            </div>-->
+            <br /> 
+            <label for="name" style="
+            padding-left: .5rem; font-weight: 300;">Name </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Debtor's name"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+              <label for="contact" style="
+            padding-left: .5rem; font-weight: 300;">Contact </label>
+            <input
+              type="number"
+              name="contact"
+              id="contact"
+              required
+              placeholder="Debtor's contact"
+              style="
+                padding: 0.5rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                border-radius: 0.4rem;
+                border: 1px solid black;
+              "
+            /><br />
+            <br />
+            <button
+              type="submit"
+              style="
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                border: none;
+                background-color: red;
+                color: white;
+                border-radius: 0.4rem;
+                height: 2rem;
+                cursor: pointer;
+              "
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+          let pop = document.getElementById("pop");
+          pop.style.transformOrigin = 'top'
+      function popup(){
+                pop.style.transform = "translateX(-50%) translateY(-50%) scale(1)";
+
+      }
+      function popdown() {
+      pop.style.transform = "translateX(-50%) translateY(-50%) scale(0)";
+    }
+    </script>
+  </body>
+</html>
+  
