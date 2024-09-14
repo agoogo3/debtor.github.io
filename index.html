@@ -73,6 +73,8 @@
         <ul class="list-group" style="gap: 0.5rem">
           <li class="list-group-item quick_access">Add Debtor</li>
           <li class="list-group-item quick_access">View Debtors</li>
+          <li class="list-group-item quick_access">Add Debt</li>
+
           <li class="list-group-item quick_access">Help & support</li>
         </ul>
       </nav>
@@ -83,7 +85,7 @@
         <li><a href="#">Balancing</a></li>
         <li><a href="debtors.html">Debtors</a></li>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <li>
+        <li onclick="openAddDebt()">
           <div class="add"><span>+</span></div>
         </li>
         <li><a href="#">Reports</a></li>
@@ -94,7 +96,7 @@
     <div class="card debtors_card" id="debtors_card" style="width: 18rem">
       <div class="card-body">
         <button type="button" class="btn-close" aria-label="Close"></button>
-        <h5 class="card-title">Add debt</h5>
+        <h5 class="card-title" id="title">Add debt</h5>
         <br />
         <div class="mb-3">
           <input

@@ -3,498 +3,188 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Debtor</title>
+    <title>Debtors</title>
+
     <link rel="stylesheet" href="style/debtor.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body style="background-color: red">
-    <b onclick="history.back()" style="color: white; text-decoration: none; font-size: 1.9rem; cursor: pointer;">&larr;</b>
+    <b
+      onclick="history.back()"
+      style="
+        color: white;
+        text-decoration: none;
+        font-size: 1.9rem;
+        cursor: pointer;
+        margin-left: 10px;
+      "
+      >&larr;</b
+    >
 
     <br /><br />
-    <span style="color: white">Debtor Name</span>
-    <span style="float: right; color: white"><b>Contact</b></span
-    ><br /><br />
-    <b style="color: white; font-size: 1.2rem">GHC 0.00</b><br />
-    <button
-      onclick="popup()"
-      style="
-        background-color: white;
-        border-radius: 4px;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        border: none;
-        width: 95%;
-        height: 2.5rem;
-        font-size: 0.9rem;
-        font-weight: 400;
-        margin-top: 1rem;
-        color: red;
-        cursor: pointer;
-        margin-bottom: 1rem;
-      "
+    <h6 class="card-subtitle mb-2" style="color: white">Debtors</h6>
+    <h6
+      class="card-subtitle mb-2"
+      style="color: white; font-weight: 700; font-size: 1.3rem"
     >
-      Add Debt
-    </button>
-    <br />
+      GHC 0.00
+    </h6>
+    <button class="first_button" id="add-debt-btn">Add Debt</button><br /><br />
 
-    <div class="main_wrapper" style="padding: 0.5rem">
+    <div class="main_wrapper">
       <nav class="nav">
-        <span
-          style="border-bottom: 2px solid red; cursor: pointer"
-          id="active"
-          onclick="activeDebts()"
-          >Active Debts</span
-        >
-        <span style="cursor: pointer" onclick="paidDebts()" id="paid"
-          >Paid Debts</span
-        >
+        <ul>
+          <li class="nav-list active">Active Debts</li>
+          <li class="nav-list">Paid Debts</li>
+        </ul>
       </nav>
-      <div class="active_debt" id="active_debt">
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="30" max="200"></progress>
+      <div class="a-wrapper ">
+        <div class="card debtor">
+          <h5 class="card-title">Sat, June 13</h5>
 
-          <button class="make_payment" id="make_payment">Make Payment</button
-          ><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="170" max="200"></progress>
+          <div class="card-body">
+            <div class="wrap">
+              <span> 10:52pm</span>
+              <span class="left" style="float: right"
+                ><span style="color: blue">GHC 170.00</span> of GHC 200.00
+                left</span
+              >
 
-          <button class="make_payment">Make Payment</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="170" max="200"></progress>
-
-          <button class="make_payment">Make Payment</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="170" max="200"></progress>
-
-          <button class="make_payment">Make Payment</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
-        <div class="payment" id="pop">
-          <form>
-            <div class="sub_payment payment" id="payment">
-              <span class="close" onclick="popdown()">&Cross;</span> <br />
-              <span
-                style="
-                  padding: 0.5rem;
-                  font-weight: 250;
-                  font-size: 1.1rem;
-                  transform-origin: bottom;
-                "
-                >Tap to select an amount</span
-              ><br />
-              <div class="amount_wrapper">
-                <div class="amount">10</div>
-                <div class="amount">20</div>
-                <div class="amount">50</div>
-                <div class="amount">70</div>
-                <div class="amount">100</div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Basic example"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 10px; border: 1px solid rgb(160, 153, 153)"
+              >
+                <div class="progress-bar" style="width: 90%"></div>
               </div>
               <br />
-              <input
-                type="number"
-                name="p_amount"
-                id="amount"
-                required
-                placeholder="Or enter amount"
-                style="
-                  padding: 0.5rem;
-                  position: relative;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 90%;
-                  border-radius: 0.4rem;
-                  border: 1px solid black;
-                "
-              /><br />
-              <input
-                type="text"
-                name="reason"
-                id="reason"
-                required
-                placeholder="Reason for debt"
-                style="
-                  padding: 0.5rem;
-                  margin-top: 0.5rem;
-                  position: relative;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 90%;
-                  border-radius: 0.4rem;
-                  border: 1px solid black;
-                "
-              /><br />
-              <br />
-              <button
-                id="payment_button"
-                type="submit"
-                style="
-                  position: relative;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 95%;
-                  border: none;
-                  background-color: red;
-                  color: white;
-                  border-radius: 0.4rem;
-                  height: 2rem;
-                  cursor: pointer;
-                "
+              <button disabled class="make-payment" >Make Payment</button>
+              <span class="reason"
+                >Reason: Had to attend to an important emergency</span
               >
-                Make Payment
-              </button>
             </div>
-          </form>
+          </div>
         </div>
+      
       </div>
-      <div class="paid_debt" id="paid_debt">
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="30" max="200"></progress>
+            <div class="a-wrapper nav-switch-off">
+        <div class="card debtor">
+          <h5 class="card-title">Sat, June 13</h5>
 
-          <button disabled class="make_payment">Already paid</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="170" max="200"></progress>
+          <div class="card-body">
+            <div class="wrap">
+              <span> 10:52pm</span>
+              <span class="left" style="float: right"
+                ><span style="color: blue">GHC 170.00</span> of GHC 200.00
+                left</span
+              >
 
-          <button disabled class="make_payment">Already paid</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Basic example"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 10px; border: 1px solid rgb(160, 153, 153)"
+              >
+                <div class="progress-bar" style="width: 90%"></div>
+              </div>
+              <br />
+              <button class="make-payment"style="background-color: grey;">Make Payment</button>
+              <span class="reason"
+                >Reason: Had to attend to an important emergency</span
+              >
+            </div>
+          </div>
         </div>
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="170" max="200"></progress>
-
-          <button disabled class="make_payment">Already paid</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
-        <div class="debt_details">
-          <p
-            style="
-              padding: 0.5rem 0rem 0rem 1rem;
-              font-size: 1.1rem;
-              font-weight: 300;
-            "
-          >
-            Thu, June 13
-          </p>
-          <hr
-            style="
-              position: relative;
-              color: rgb(235, 219, 219);
-              opacity: 0.4;
-              margin-top: -0.5rem;
-            "
-          />
-          <span style="font-weight: 150; font-size: 14px; padding-left: 1rem"
-            >09:35</span
-          >
-          <span
-            style="
-              font-weight: 4350;
-              float: right;
-              padding-right: 1rem;
-              font-size: 14px;
-            "
-            ><span style="color: rgb(0, 17, 255)">GHC 170.00</span> of GHC
-            200.00 left
-          </span>
-          <progress class="debtor_pro" value="170" max="200"></progress>
-
-          <button disabled class="make_payment">Already paid</button><br />
-          <span style="font-weight: 250; font-size: 14px; padding-left: 1rem"
-            >Reason: Was using it to buy gob3</span
-          >
-          <br /><br />
-        </div>
+      
       </div>
     </div>
+    <div class="card debtors_card" id="debtors_card" style="width: 18rem">
+      <div class="card-body">
+        <button type="button" class="btn-close" aria-label="Close"></button>
+        <h5 class="card-title" id="title">Add debt</h5>
+        <br />
+        <div class="mb-3">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search Debtors"
+            id="searchDebtors"
+          />
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item debt_list">Junior Agoogo</li>
+          <li class="list-group-item debt_list">Mathin Luther</li>
+          <li class="list-group-item debt_list">Philip Laurea</li>
+          <li class="list-group-item debt_list">Kwame Kinglsey</li>
+          <li class="list-group-item debt_list">Nana Appiah</li>
+          <li class="list-group-item debt_list">Junior Agoogo</li>
+          <li class="list-group-item debt_list">Mathin Luther</li>
+          <li class="list-group-item debt_list">Philip Laurea</li>
+          <li class="list-group-item debt_list">Kwame Kinglsey</li>
+          <li class="list-group-item debt_list">Nana Appiah</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card update_card" id="update_card" style="width: 18rem">
+      <div class="card-body">
+        <button type="button" class="btn-close" aria-label="Close"></button>
+        <h5 class="card-title" style="font-size: 17px">
+          Tap to select an amount
+        </h5>
+        <br />
+        <form>
+          <div class="amount_wrap">
+            <button type="button" class="btn btn-outline-dark">10</button>
+            <button type="button" class="btn btn-outline-dark">10</button>
+            <button type="button" class="btn btn-outline-dark">10</button>
+            <button type="button" class="btn btn-outline-dark">10</button>
+          </div>
+          <br />
+          <div class="mb-3">
+            <input
+              type="text"
+              inputmode="numeric"
+              class="form-control"
+              placeholder="Or input amount here"
+              id="payment_amount"
+              pattern="^\d+$"
+              title="Only whole numbers required"
+              required
+            />
+          </div>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="floatingTextarea"
+              style="height: 100px"
+              required
+            ></textarea>
+            <label for="floatingTextarea">Reason for debt</label>
+          </div>
+          <br />
+          <button type="button submit" class="btn btn-danger">
+            Make Payment
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="mode" id="mode"></div>
   </body>
-  <script>
-    let make_payment = document.getElementsByClassName("make_payment");
-    let pop = document.getElementById("pop");
-    let amount = document.getElementsByClassName("amount");
-    let p_amount = document.getElementById("amount");
-    let active_debt = document.getElementById("active_debt");
-    let paid_debt = document.getElementById("paid_debt");
-    let paid = document.getElementById("paid");
-    let active = document.getElementById("active");
-    let reason = document.getElementById("reason");
-    let payment = document.getElementById("payment");
-    let payment_button = document.getElementById("payment_button");
 
-    function activeDebts() {
-      active_debt.style.display = "block";
-      paid_debt.style.display = "none";
-      paid.style.borderBottom = "none";
-      active.style.borderBottom = "2px solid red";
-    }
-    function paidDebts() {
-      active_debt.style.display = "none";
-      paid_debt.style.display = "block";
-      paid.style.borderBottom = "2px solid red";
-      active.style.borderBottom = "none";
-    }
-
-    for (let i = 0; i < amount.length; i++) {
-      amount[i].addEventListener("click", () => {
-        p_amount.value = amount[i].textContent;
-        // console.log(amount[i].textContent)
-      });
-    }
-
-    function popdown() {
-      pop.style.transform = "translateX(-50%) translateY(-50%) scale(0)";
-    }
-    function popup() {
-      pop.style.transform = "translateX(-50%) translateY(-50%) scale(1)";
-      reason.style.display = "inline-block";
-      payment_button.textContent = "Confirm Debt";
-      pop.style.transformOrigin = "top";
-    }
-
-    for (let i = 0; i < make_payment.length; i++) {
-      make_payment[i].addEventListener("click", () => {
-        pop.style.transform = "translateX(-50%) translateY(-50%) scale(1)";
-        reason.style.display = "none";
-        payment_button.textContent = "Confirm Payment";
-        pop.style.transformOrigin = "center";
-        // payment.style.height = '14rem'
-      });
-    }
-  </script>
+  <script src="script/debtors.js"></script>
+  <script src="script/debtors.js"></script>
 </html>

@@ -1,147 +1,75 @@
+body{
+  --shadow--: 0px 0px 4px rgb(188, 184, 184);
+  --radius--: 0.5rem;
+  height: 100dbh;
+}
 .main_wrapper {
   background-color: rgb(255, 248, 248);
-  height: 100vh;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 100dvh;
 }
-.nav {
-  display: flex;
-  justify-content: space-around;
-  font-size: 0.9rem;
-}
-.debt_details {
+.first_button {
   background-color: white;
-  box-shadow: 0px 2px 7px rgb(188, 184, 184);
-  /* height: 11em; */
-  border-radius: 1rem;
-}
-progress {
-  width: 90%;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-
-}
-.make_payment {
-  position: relative;
-  width: 90%;
-  background-color: red;
   border: none;
-  color: white;
-  font-weight: 500;
-  border-radius: 0.5rem;
+  width: 95%;
+  padding: 9px;
+  position: relative;
   left: 50%;
-  transform: translateX(-50%);
-  height: 2.5rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-}
-.payment {
-  /* display: none; */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(0);
-  height: 100%;
-  z-index: 1;
-  transition: 0.3s transform;
-  width: 100%;
-  z-index: 70;
-  background-color: rgb(0, 0, 0, 0.5);
-}
-.sub_payment {
-  height: 17.5rem;
-  width: 80%;
-  z-index: 5;
-  background-color: whitesmoke;
-  box-shadow: 0px 2px 7px rgb(122, 119, 119);
-  border-radius: 1rem;
-  position: fixed;
-  top: 50%;
-  transition: 0.3s transform;
-
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.close {
-  float: right;
-  margin: 0.5rem;
-  font-size: 20px;
-  padding: 0.4rem;
-  border-radius: 100%;
-  text-align: center;
-  color: black;
-  width: 20px;
-  cursor: pointer;
-
-  transition: 1s ease-in-out;
-}
-.close:hover {
-  background-color: red;
-  color: white;
-}
-.amount_wrapper {
-  width: 100%;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-around;
-  /* gap: .5rem; */
-}
-.amount {
-  background-color: white;
-  border: 1px solid rgb(198, 179, 179);
+  color: red;
   border-radius: 5px;
-  display: grid;
-  place-items: center;
-  /* padding: .5rem; */
-  font-weight: 300;
-  width: 3rem;
-  height: 3rem;
-  cursor: pointer;
+  transform: translateX(-50%);
 }
-.paid_debt button {
-  background-color: gray;
-  cursor: not-allowed;
-}
-.paid_debt {
-  display: none;
-}
-
-/*Debtors*/
-.first_overview {
+.main_wrapper{
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  border-radius: 0.5rem;
-  height: 11rem;
-  width: 95%;
-  box-shadow: 0px 0px 4px rgb(188, 184, 184);
-  margin-bottom: 1rem;
+  align-items: center;
+  
 }
-.first_overview * {
-  padding-left: 1rem;
-  position: relative;
+
+
+
+/*Debtors*/
+.nav{
+  width: 100%;
+  padding: 10px;
+
+  
 }
-.debtor {
-  padding-top: 0.5rem;
+.nav ul{
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  font-size: 12pxs;
+  justify-content: space-around;
 }
-.gh_left {
-  bottom: 1rem;
-  font-size: 1.3rem;
+.nav ul li{
+  font-size: 14px;
+  cursor: pointer;
+  
 }
-.pro {
-  bottom: 2.2rem;
-  width: 85%;
-  /* margin-left: 0.1rem; */
+.a-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
-.of {
-  bottom: 2rem;
-  font-size: 12px;
-  font-weight: 300;
+
+.active{
+  border-bottom: 2px solid red;
+}
+.make-payment{
+  background-color: red;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 7px;
+  border-radius: var(--radius--);
+}
+
+.nav-switch-off{
+  display: none;
+}
+.nav-switch-on{
+  display: block;
 }

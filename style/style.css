@@ -26,7 +26,7 @@ body {
 .debtor {
   box-shadow: var(--shadow--);
   width: 95%;
-  margin-top: 30px;
+  margin-top: 10px;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
 }
